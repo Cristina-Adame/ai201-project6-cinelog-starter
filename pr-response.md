@@ -60,6 +60,8 @@
 
 **How I verified no conflict remains:** Ran `pytest tests/ -v` — all tests passed.
 
+**Screenshot of Commits:**
+<img width="1237" height="352" alt="image" src="https://github.com/user-attachments/assets/8ad0f0de-cbf1-4a60-baea-167f6d0c7f3d" />
 
 
 ## PR Description
