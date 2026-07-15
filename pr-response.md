@@ -54,15 +54,30 @@
 
 ## Comment 6 — Rebase
 
-**What conflicted:**
+**What conflicted:** The .gitignore file had an add/add conflict since main added one during the refactor and models.py didn't have the WatchlistEntry after the refactor.
 
-**How I resolved it:**
+**How I resolved it:** Merged the .gitignore conflict by keeping what both versions had in it. Added the WatchlistEntry back to models.py.
 
-**How I verified no conflict remains:**
+**How I verified no conflict remains:** Ran `pytest tests/ -v` — all tests passed.
 
 
 
 ## PR Description
 
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
+## What it does
+Adds watchlist feature to CineLog so users may save films they want to see
 
+## Design decisions
+**Default visibility (public=True):** Watchlists default to public because CineLog is a community film tracking app, as such it can be reasoned that these watchlists should default to being public and then later the user may toggle the option to make it private.
+
+**Sort order (date added):** Watchlists are sorted by date added descending. Dates associated with movies may also help a user recall which movie they wanted to choose (e.g. "what was that movie I wanted to watch two months ago? I recall I added it to my watchlist").
+
+## How to manually test
+1. Start the app: `python app.py`
+2. Add a film to a watchlist:
+   `curl -X POST http://127.0.0.1:5000/watchlist/<user_id>/add -H "Content-Type: application/json" -d '{"film_id": "<film_uuid>"}'`
+3. View the watchlist:
+   `curl http://127.0.0.1:5000/watchlist/<user_id>`
+4. Verify duplicate prevention by adding the same film twice — should return an error.
+5. Run the test suite: `pytest tests/ -v`
