@@ -5,7 +5,7 @@
 ## AI Usage
 
 <!-- Fill in at the end — how you used AI tools during this project -->
-
+Asked Claude to pull up and explain the PR review comments in order to understand fully what each one was asking. Claude helped me understand what each changed wanted and I verified by reading the code and seeing the reasoning for the changes proposed. For Comments 4 and 5, I made my own arguments first anf then asked Claude to see if my tradeoffs made sense. Claude helped me understand the issues going on with the rebase and I made the changes and tested them with the appropriate file.
 
 
 ## Comment 1 — Rename
