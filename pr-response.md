@@ -12,7 +12,7 @@
 
 \*\*What I did:\*\* I changed the function name from save\_to\_watchlist() to add\_to\_watchlist() in the services/watchlist\_service.py file and updated any calls found in routes/watchlist/watchlist.py. 
 
-\*\*How I verified:\*\* I did a project-wide search for any more instances of the old function name and then ran the `pytest tests/ -v` and all tests passed.
+\*\*How I verified:\*\* I did a project-wide search for any more instances of the old function name and then ran `pytest tests/ -v` and all tests passed.
 
 
 
@@ -20,15 +20,15 @@
 
 \*\*What I did:\*\* Added deduplication logic to add\_to\_watchlist() function in services/watchlist\_service.py. Did so by adding a check to see if the film already existed in the watchlist and added a class AlreadyInWatchlistError(Exception) for handling the exception.
 
-\*\*How I verified:\*\* I ran the `pytest tests/ -v` and all tests passed.
+\*\*How I verified:\*\* I ran `pytest tests/ -v` and all tests passed.
 
 
 
 \## Comment 3 — Missing test
 
-\*\*What I did:\*\*
+\*\*What I did:\*\* Created a new file tests/test\_watchlist.py. Used test\_add\_to\_collection\_nonexistent\_film\_raises() from tests/test\_collection.py to wrote an equivalently structured function. Adjusted the imports, copied the pytest fixtures and added the nonexistent film handling function.
 
-\*\*How I verified:\*\*
+\*\*How I verified:\*\* I ran `pytest tests/test\_watchlist.py -v` along with `pytest tests/ -v` and all tests passed.
 
 
 
