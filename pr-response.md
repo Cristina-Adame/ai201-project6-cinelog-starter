@@ -10,17 +10,17 @@
 
 \## Comment 1 — Rename
 
-\*\*What I did:\*\*
+\*\*What I did:\*\* I changed the function name from save\_to\_watchlist() to add\_to\_watchlist() in the services/watchlist\_service.py file and updated any calls found in routes/watchlist/watchlist.py. 
 
-\*\*How I verified:\*\*
+\*\*How I verified:\*\* I did a project-wide search for any more instances of the old function name and then ran the `pytest tests/ -v` and all tests passed.
 
 
 
 \## Comment 2 — Deduplication
 
-\*\*What I did:\*\*
+\*\*What I did:\*\* Added deduplication logic to add\_to\_watchlist() function in services/watchlist\_service.py. Did so by adding a check to see if the film already existed in the watchlist and added a class AlreadyInWatchlistError(Exception) for handling the exception.
 
-\*\*How I verified:\*\*
+\*\*How I verified:\*\* I ran the `pytest tests/ -v` and all tests passed.
 
 
 
